@@ -1,0 +1,17 @@
+.homeCarousel {
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rebeccapurple;
+}
+
+.ArrowLeftImg {
+
+
+}
+
+.ArrowRightImg {
+    transform: scaleX(-1);
+
+}
