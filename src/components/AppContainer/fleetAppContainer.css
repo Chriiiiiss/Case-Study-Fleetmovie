@@ -1,0 +1,19 @@
+.appContainer {
+    padding: 50px 50px 0px 50px;
+    height: calc(100vh - 200px);
+}
+
+.appContainer h1{
+    position: relative;
+    font-size: 40px;
+}
+
+.appContainer h1::after {
+    content: '';
+    width: 140px;
+    height: 9px;
+    background-color: var(--secondary-color);
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+}
