@@ -1,0 +1,51 @@
+.searchBar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 38px;
+    height: 38px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 20px;
+    transition: width 0.3s linear;
+}
+
+.searchBar.active {
+    width: 228px;
+}
+
+.searchBar input {
+    visibility: hidden;
+    width: 0%;
+
+}
+
+
+.searchBar.active input {
+    width: 100%;
+    position: absolute;
+    left: 3px;
+    visibility: visible;
+    background-color: transparent;
+    border: none;
+    font-size: 15px;
+    margin: 10px 50px;
+    outline: none;
+    color: var(--primary-color);
+    transition: width 0.5s linear;
+    transition-delay: 0.3s;
+}
+
+
+.searchIconButton {
+    cursor: pointer;
+    position: absolute;
+    left: -2px;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    border: 2px solid var(--secondary-color);
+}
