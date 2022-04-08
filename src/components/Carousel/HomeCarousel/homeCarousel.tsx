@@ -9,12 +9,6 @@ interface HomeCarouselProps {
     sortBy: string;
 }
 
-interface MovieCarousel {
-    movieId: string;
-    movieTitle: string;
-    moviePosterUrl: string;
-}
-
 export default function HomeCarousel (props: HomeCarouselProps) {
     const [movieList, setMovieList] = useState([]);
     const baseImgUrl = "https://image.tmdb.org/t/p/original"
@@ -43,25 +37,15 @@ export default function HomeCarousel (props: HomeCarouselProps) {
 
     return (
         <div className="homeCarousel">
-            {/* <div className="ArrowLeftImg">
-                <img src={process.env.PUBLIC_URL + 'arrowIcon.svg'} alt="Left Arrow" />
-            </div> */}
             <FleetCarousel>
-                {movieList.map((elem) => {
-                    console.log(elem);
+                {movieList.map((elem, index) => {
                     return (
-                        <Link to={"/movie/" + elem["id"]}>
-                            <MovieCard movieTitle={elem["title"]} imgUrl={baseImgUrl + elem["poster_path"]}/>
+                        <Link key={index} to={"/movie/" + elem["id"]}>
+                            <MovieCard key={index} movieTitle={elem["title"]} imgUrl={baseImgUrl + elem["poster_path"]}/>
                         </Link>
                     )
                 })}
-                {/* <Link to="/movie/">
-                    <MovieCard movieTitle={"Aladeux"} imgUrl={"https://fr.web.img6.acsta.net/pictures/18/06/28/13/57/4993195.jpg"}/>
-                </Link> */}
             </FleetCarousel>
-            {/* <div className="ArrowRightImg">
-                <img src={process.env.PUBLIC_URL + 'arrowIcon.svg'} alt="Left Arrow" />
-            </div> */}
         </div>
     )
 }
