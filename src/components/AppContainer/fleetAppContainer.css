@@ -5,7 +5,7 @@
 
 .appContainer h1{
     position: relative;
-    font-size: 40px;
+    font-size: 35px;
 }
 
 .appContainer h1::after {

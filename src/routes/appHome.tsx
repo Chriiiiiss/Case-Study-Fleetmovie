@@ -5,7 +5,7 @@ import FleetAppContainer from "../components/AppContainer/fleetAppContainer";
 export default function AppHome () {
     return (
         <div>
-            <HeaderFleetMovie/>
+            <HeaderFleetMovie darkMode={false}/>
             <FleetAppContainer/>
         </div>
     )
