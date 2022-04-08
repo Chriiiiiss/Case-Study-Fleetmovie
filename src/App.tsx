@@ -13,6 +13,9 @@ import Movie from './routes/movie';
 
 
 function App() {
+
+
+
   return (
     <div className="App">
       <BrowserRouter>

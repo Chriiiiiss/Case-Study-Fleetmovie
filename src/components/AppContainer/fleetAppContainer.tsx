@@ -7,7 +7,7 @@ export default function FleetAppContainer () {
     return (
         <div className="appContainer">
             <h1>Films</h1>
-            <HomeCarousel/>
+            <HomeCarousel sortBy="popular"/>
         </div>
     )
 }
