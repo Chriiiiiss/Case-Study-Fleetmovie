@@ -1,5 +1,7 @@
 import React from "react";
-import './headerFleet.css'
+
+import './headerFleet.css';
+import Logo from '../../assets/fleetLogo.svg';
 
 import SearchBarMovie from "./searchBar/searchBar";
 
@@ -8,7 +10,7 @@ function HeaderFleetMovie() {
         <div className="headerFleet">
             <a className="logoWrapper" href="#">
                 <img 
-                    src={process.env.PUBLIC_URL + "fleetLogo.svg"}
+                    src={Logo}
                     alt="fleetMovie logo"
                     className="fleetMovieLogo"/>
             </a>
