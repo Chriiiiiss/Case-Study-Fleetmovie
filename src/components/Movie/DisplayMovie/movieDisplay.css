@@ -1,0 +1,91 @@
+.movieDisplay {
+    padding: 50px 0px 0px 50px;
+    height: calc(100vh - 200px);
+    color: white;
+    width: 50%;
+}
+
+.movieDisplay h1{
+    display: inline-block;
+    position: relative;
+    font-size: 100px;
+    color: whitesmoke;
+    text-shadow: 2px 2px 5px #000;
+}
+
+.imgPoster {
+    padding: 50px 50px 0px 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.imgPoster {
+    max-width: 300px;
+    min-width: 300px;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: all 0.3s linear;
+}
+
+.imgPoster:hover {
+    border-radius: 25%;
+    transition: all 0.3s linear;
+}
+
+.movieDisplayApp{
+    position: relative;
+}
+
+.movieContainer {
+    display: flex;
+    gap: 100px;
+}
+
+.bgImg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+.movieInfo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.movieType {
+    color: var(--secondary-color);
+    font-size: 45px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.movieRate {
+    color: var(--secondary-color);
+    font-size: 35px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.dateAndTime {
+    display: flex;
+    gap: 20px;
+}
+
+.dateAndTime p {
+    font-size: 25px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.movieDesc {
+    padding-top: 25px;
+    font-size: 20px;
+    text-shadow: 1px 1px 2px #000;
+}
