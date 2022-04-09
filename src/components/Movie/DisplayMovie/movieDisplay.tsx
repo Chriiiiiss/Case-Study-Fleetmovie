@@ -21,7 +21,11 @@ export default function MovieDisplay (props: MovieDisplayProps) {
     return (
         <div className="movieDisplayApp">
             <HeaderFleetMovie darkMode={true}/>
-            <img className="bgImg" src={bgMovieUrl} alt="Background Movie Image" />
+            <img className="bgImg" src={bgMovieUrl} alt="Background Movie Image" onError={(img) => {
+                img.currentTarget.onerror = null;
+                // On met une grande image de chat quand l'api ne renvoi pas d'image
+                img.currentTarget.src = 'http://placekitten.com/g/1920/1080'
+            }}/>
             <div className="movieContainer">
                 <div className="movieDisplay">
                     <h1>{props.movieTitle}</h1>
@@ -35,7 +39,12 @@ export default function MovieDisplay (props: MovieDisplayProps) {
                     </div>
                     <p className="movieDesc">{props.movieOverview}</p>
                 </div>
-                <img className="imgPoster" src={bgMoviePoster} alt="Movie Poster" />
+                <img className="imgPoster" src={bgMoviePoster} alt="Movie Poster" onError={(img) => {
+                    img.currentTarget.onerror = null;
+
+                    // On met une image de chat quand l'api ne renvoi pas d'image
+                    img.currentTarget.src = 'http://placekitten.com/g/300/400'
+                }}/>
             </div>
         </div>
     )
