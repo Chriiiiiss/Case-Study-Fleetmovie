@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import MovieDisplay from "../components/Movie/DisplayMovie/movieDisplay"; 
+import MovieDisplay from "../components/Movie/DisplayMovie/movieDisplay";
+
+import './style/movie.css'
+import Logo from '../assets/fleetLogo.svg'
 
 
 export default function Movie () {
@@ -17,6 +20,8 @@ export default function Movie () {
         overview: "",
         poster_path: "",
     });
+
+    const [isLoading, setIsLoading] = useState(true);
 
 
     useEffect(() => {
@@ -49,21 +54,34 @@ export default function Movie () {
             }
         }
         fetchMovie();
+        setIsLoading(false);
+
 
     }, [])
 
-    return (
-        <div>
-            {console.log(movieData)}
-            <MovieDisplay 
-                bgMovieUrl={movieData["backdrop_path"]} 
-                movieTitle={movieData["title"]} 
-                movieGenre={movieData["genres"]} 
-                movieVoteAverage={movieData["vote_average"]} 
-                movieReleaseDate={movieData["release_date"].split("-")[0]} 
-                movieRuntime={movieData["runtime"]} 
-                movieOverview={movieData["overview"]} 
-                moviePosterUrl={movieData["poster_path"]}/>
-        </div>
-    )
+
+    if(isLoading) {
+        return (
+            <div className="loadingScreen">
+                <div className="logoContainer">
+                    <img src={Logo}/>
+                </div>
+            </div>
+        )
+    } else {
+        return (
+            <div>
+                <MovieDisplay 
+                    bgMovieUrl={movieData["backdrop_path"]} 
+                    movieTitle={movieData["title"]} 
+                    movieGenre={movieData["genres"]} 
+                    movieVoteAverage={movieData["vote_average"]} 
+                    movieReleaseDate={movieData["release_date"].split("-")[0]} 
+                    movieRuntime={movieData["runtime"]} 
+                    movieOverview={movieData["overview"]} 
+                    moviePosterUrl={movieData["poster_path"]}/>
+            </div>
+        )
+    }
+
 }
