@@ -4,13 +4,3 @@
     justify-content: space-between;
     align-items: center;
 }
-
-.ArrowLeftImg {
-
-
-}
-
-.ArrowRightImg {
-    transform: scaleX(-1);
-
-}
