@@ -2,10 +2,17 @@ import React, {useState} from "react";
 import './searchBar.css';
 
 import SearchIcon from '../../../assets/searchIcon.svg';
+import SearchResults from "../../SearchResults/searchResults";
 
 
 function SearchBarMovie () {
     const [isActive, setActive] = useState(false);
+    const [searchInput, setSearchInput] = useState("");
+
+
+    const handleSearchBar = (event: React.FormEvent<HTMLInputElement>) => {
+        setSearchInput(event.currentTarget.value);
+    }
 
     const toggleHandler = () => {
         setActive(!isActive);
@@ -16,7 +23,15 @@ function SearchBarMovie () {
             <div className="searchIconButton" onClick={toggleHandler}>
                 <img src={SearchIcon} alt="search icon" />
             </div>
-            <input type="text" placeholder="Hello World" />
+            <div className="inputContainer">
+                <input 
+                type="text"
+                placeholder="Search a movie"
+                value={searchInput}
+                onChange={handleSearchBar}
+                />
+            </div>
+            <SearchResults searchString={searchInput} />
         </div>
     )
 }

@@ -14,16 +14,22 @@
     width: 228px;
 }
 
-.searchBar input {
+.inputContainer input {
     visibility: hidden;
     width: 0%;
+}
 
+.inputContainer {
+    min-width: 100%;
+    min-height: 50%;
+    overflow: scroll;
 }
 
 
-.searchBar.active input {
-    width: 100%;
+.searchBar.active .inputContainer input {
+    width: fit-content;
     position: absolute;
+    top: 0;
     left: 3px;
     visibility: visible;
     background-color: transparent;

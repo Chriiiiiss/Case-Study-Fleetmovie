@@ -6,7 +6,8 @@ import './homeCarousel.css'
 import { Link } from "react-router-dom";
 
 interface HomeCarouselProps {
-    sortBy: string;
+    sortBy?: string;
+    search?: Boolean;
 }
 
 export default function HomeCarousel (props: HomeCarouselProps) {
@@ -14,7 +15,14 @@ export default function HomeCarousel (props: HomeCarouselProps) {
     const baseImgUrl = "https://image.tmdb.org/t/p/original"
 
     useEffect(() => {
-        const apiUrl = "https://api.themoviedb.org/3/movie/" + props.sortBy;
+        let apiUrl = "";
+
+        if(props.search) {
+            apiUrl = "https://api.themoviedb.org/3/search/movie?&query=" + props.sortBy;
+        } else {
+
+            apiUrl = "https://api.themoviedb.org/3/movie/" + props.sortBy;
+        }
 
         const fetchApi = async () => {
             try {
@@ -33,7 +41,7 @@ export default function HomeCarousel (props: HomeCarouselProps) {
             }
         }
         fetchApi();
-    }, []);
+    }, [props.sortBy]);
 
     return (
         <div className="homeCarousel">
